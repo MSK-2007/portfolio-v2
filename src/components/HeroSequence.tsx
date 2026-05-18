@@ -106,60 +106,65 @@ export default function HeroSequence() {
         {/* Dark vignette — stronger at bottom so name text pops */}
         <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/30 via-transparent via-[45%] to-black/95 pointer-events-none" />
 
-        {/* Section 1 — name centered below the face + buttons at bottom */}
+        {/* Section 1 — name centered below the face, buttons at bottom */}
         <motion.div
           style={{ opacity: section1Opacity, y: section1Y }}
-          className="absolute z-10 inset-0 flex flex-col items-center justify-end pb-10 px-6 text-center"
+          className="absolute z-10 inset-0 flex flex-col justify-end pb-12 px-6"
         >
-          {/* NAME — two lines, smaller so the face shows above */}
-          <div className="mb-6 flex flex-col items-center">
+          {/* NAME BLOCK */}
+          <div className="flex flex-col items-center w-full mb-8">
             <h1
-              className="font-display uppercase leading-[0.9] text-center"
+              className="font-display uppercase text-white text-center w-full whitespace-nowrap"
               style={{
-                fontSize: "clamp(2.2rem, 9vw, 7.5rem)",
-                background: "linear-gradient(180deg, #ffffff 40%, rgba(255,255,255,0.6) 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
+                fontSize: "clamp(1.5rem, 6vw, 6.5rem)",
+                lineHeight: "0.85",
                 letterSpacing: "-0.01em",
-                filter: "drop-shadow(0 0 30px rgba(57,255,90,0.2))",
+                filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.6))",
               }}
             >
-              MANISH<br />SHIVA KUMAR
+              MANISH SHIVA KUMAR
             </h1>
 
             {/* Category tag */}
-            <div className="mt-4 inline-flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#39ff5a] animate-pulse" />
-              <span className="font-mono-custom text-[10px] tracking-[0.3em] uppercase text-white/55">
+            <div className="mt-5 inline-flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#39ff5a] shadow-[0_0_8px_#39ff5a] animate-pulse" />
+              <span className="font-mono-custom text-[10px] tracking-[0.3em] uppercase text-white/60">
                 Graphic Designer &amp; Visual Artist
               </span>
             </div>
           </div>
 
-          {/* CTA buttons */}
-          <div className="flex gap-3 flex-wrap justify-center">
-            <a
-              href="#work"
-              onClick={(e) => { e.preventDefault(); document.getElementById("work")?.scrollIntoView({ behavior: "smooth" }); }}
-              className="btn-outline-dark"
-            >
-              View My Work
-            </a>
-            <a
-              href="#contact"
-              onClick={(e) => { e.preventDefault(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}
-              className="btn-solid-green"
-            >
-              Let's Collaborate
-            </a>
+          {/* BOTTOM BLOCK: Scroll & Buttons */}
+          <div className="flex flex-col items-center w-full">
+            {/* Scroll text */}
+            <span className="font-mono-custom text-[9px] tracking-[0.35em] text-white/40 uppercase mb-5">
+              Scroll
+            </span>
+
+            {/* CTA buttons */}
+            <div className="flex gap-4 flex-wrap justify-center">
+              <a
+                href="#work"
+                onClick={(e) => { e.preventDefault(); document.getElementById("work")?.scrollIntoView({ behavior: "smooth" }); }}
+                className="btn-outline-dark"
+              >
+                View My Work
+              </a>
+              <a
+                href="#contact"
+                onClick={(e) => { e.preventDefault(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}
+                className="btn-solid-green"
+              >
+                Let's Collaborate
+              </a>
+            </div>
           </div>
         </motion.div>
 
         {/* Section 2 */}
         <motion.div
           style={{ opacity: section2Opacity, y: section2Y }}
-          className="absolute z-10 inset-0 flex items-end pb-40 px-8 md:items-center md:pb-0 md:px-20"
+          className="absolute z-10 inset-0 flex items-end pb-40 px-8 md:items-center md:pb-0 md:px-20 pointer-events-none"
         >
           <div>
             <p className="font-mono-custom text-[10px] tracking-[0.3em] uppercase text-white/50 mb-4">— Selected Work</p>
@@ -174,7 +179,7 @@ export default function HeroSequence() {
         {/* Section 3 */}
         <motion.div
           style={{ opacity: section3Opacity, y: section3Y }}
-          className="absolute z-10 inset-0 flex items-end pb-40 justify-start px-8 md:items-center md:pb-0 md:justify-end md:px-20"
+          className="absolute z-10 inset-0 flex items-end pb-40 justify-start px-8 md:items-center md:pb-0 md:justify-end md:px-20 pointer-events-none"
         >
           <div className="text-left md:text-right">
             <p className="font-mono-custom text-[10px] tracking-[0.3em] uppercase text-white/50 mb-4">— Who I Am</p>
@@ -184,15 +189,6 @@ export default function HeroSequence() {
               <span className="text-[#b5f500]">Passion</span>
             </h2>
           </div>
-        </motion.div>
-
-        {/* Scroll hint */}
-        <motion.div
-          style={{ opacity: section1Opacity }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
-        >
-          <span className="font-mono-custom text-[9px] tracking-[0.35em] text-white/40 uppercase">Scroll</span>
-          <div className="w-[1px] h-10 bg-gradient-to-b from-white/30 to-transparent" />
         </motion.div>
       </div>
     </div>
