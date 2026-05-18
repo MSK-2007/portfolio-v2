@@ -116,7 +116,7 @@ export default function HeroSequence() {
             <h1
               className="font-display uppercase text-white text-center w-full whitespace-nowrap"
               style={{
-                fontSize: "clamp(1.5rem, 6vw, 6.5rem)",
+                fontSize: "clamp(2rem, 7.5vw, 8.5rem)",
                 lineHeight: "0.85",
                 letterSpacing: "-0.01em",
                 filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.6))",
