@@ -103,33 +103,53 @@ export default function HeroSequence() {
 
         <canvas ref={canvasRef} className="absolute inset-0 h-full w-full object-cover z-0" />
 
-        {/* Dark vignette — heavier at bottom to frame the text below the face */}
-        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/20 via-transparent via-[55%] to-black/85 pointer-events-none" />
+        {/* Dark vignette — stronger at bottom so name text pops */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/30 via-transparent via-[45%] to-black/95 pointer-events-none" />
 
-        {/* Section 1 — name + buttons pinned to the BOTTOM, below the face */}
+        {/* Section 1 — name centered below the face + buttons at bottom */}
         <motion.div
           style={{ opacity: section1Opacity, y: section1Y }}
-          className="absolute z-10 bottom-0 left-0 right-0 flex flex-col items-center pb-10 px-6 text-center"
+          className="absolute z-10 inset-0 flex flex-col items-center justify-end pb-10 px-6 text-center"
         >
-          {/* Category tag */}
-          <div className="mb-5 inline-flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#b5f500] animate-pulse" />
-            <span className="font-mono-custom text-[10px] tracking-[0.3em] uppercase text-white/60">
-              Graphic Designer &amp; Visual Artist
-            </span>
+          {/* NAME — two lines, smaller so the face shows above */}
+          <div className="mb-6 flex flex-col items-center">
+            <h1
+              className="font-display uppercase leading-[0.9] text-center"
+              style={{
+                fontSize: "clamp(2.2rem, 9vw, 7.5rem)",
+                background: "linear-gradient(180deg, #ffffff 40%, rgba(255,255,255,0.6) 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                letterSpacing: "-0.01em",
+                filter: "drop-shadow(0 0 30px rgba(57,255,90,0.2))",
+              }}
+            >
+              MANISH<br />SHIVA KUMAR
+            </h1>
+
+            {/* Category tag */}
+            <div className="mt-4 inline-flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#39ff5a] animate-pulse" />
+              <span className="font-mono-custom text-[10px] tracking-[0.3em] uppercase text-white/55">
+                Graphic Designer &amp; Visual Artist
+              </span>
+            </div>
           </div>
+
+          {/* CTA buttons */}
           <div className="flex gap-3 flex-wrap justify-center">
             <a
               href="#work"
               onClick={(e) => { e.preventDefault(); document.getElementById("work")?.scrollIntoView({ behavior: "smooth" }); }}
-              className="btn-outline-dark !text-white !border-white hover:!bg-white hover:!text-black"
+              className="btn-outline-dark"
             >
               View My Work
             </a>
             <a
               href="#contact"
               onClick={(e) => { e.preventDefault(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}
-              className="btn-solid-blue"
+              className="btn-solid-green"
             >
               Let's Collaborate
             </a>
