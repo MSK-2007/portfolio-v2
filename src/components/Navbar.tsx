@@ -77,9 +77,8 @@ export default function Navbar() {
           {/* Desktop CTAs */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="https://drive.google.com/drive/folders/1431iK8Y3DwbioulZZXyqATr2UqUV5I15"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/manish-resume.pdf"
+              download="Manish_Shiva_Kumar_Resume.pdf"
               className="btn-outline-dark"
             >
               Resume

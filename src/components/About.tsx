@@ -116,8 +116,8 @@ export default function About() {
 
               {/* Resume */}
               <a
-                href="https://drive.google.com/uc?export=download&id=YOUR_RESUME_FILE_ID"
-                target="_blank" rel="noopener noreferrer"
+                href="/manish-resume.pdf"
+                download="Manish_Shiva_Kumar_Resume.pdf"
                 className="glass p-5 flex items-center justify-between group card-lift"
                 style={{ borderColor: "rgba(232,40,30,0.12)" }}
               >
