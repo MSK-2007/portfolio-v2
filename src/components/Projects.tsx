@@ -29,16 +29,16 @@ const DRIVE_FOLDER = "https://drive.google.com/drive/folders/1431iK8Y3DwbioulZZX
 
 export default function Projects() {
   return (
-    <section id="work" className="relative w-full bg-black overflow-hidden">
+    <section id="work" className="relative w-full bg-[#080808] overflow-hidden">
       {/* Dot grid */}
       <div className="absolute inset-0 dot-grid pointer-events-none" />
 
-      {/* Ambient green glow top-left */}
+      {/* Ambient red glow top-left */}
       <div className="absolute top-0 left-0 w-[700px] h-[500px] pointer-events-none"
-        style={{ background: "radial-gradient(ellipse at top left, rgba(57,255,90,0.04) 0%, transparent 65%)" }} />
-      {/* Ambient pink glow bottom-right */}
+        style={{ background: "radial-gradient(ellipse at top left, rgba(232,40,30,0.06) 0%, transparent 65%)" }} />
+      {/* Ambient red glow bottom-right */}
       <div className="absolute bottom-0 right-0 w-[600px] h-[400px] pointer-events-none"
-        style={{ background: "radial-gradient(ellipse at bottom right, rgba(255,45,155,0.04) 0%, transparent 65%)" }} />
+        style={{ background: "radial-gradient(ellipse at bottom right, rgba(232,40,30,0.04) 0%, transparent 65%)" }} />
 
       <div className="relative z-10 pt-24 md:pt-32 pb-0 px-6 md:px-12 lg:px-20">
         <div className="max-w-[1400px] mx-auto">
@@ -52,20 +52,20 @@ export default function Projects() {
             className="flex items-end justify-between flex-wrap gap-6 mb-6"
           >
             <div>
-              <p className="font-mono-custom text-[10px] tracking-[0.32em] uppercase text-white/25 mb-3">
+              <p className="font-mono-custom text-[10px] tracking-[0.32em] uppercase text-white/35 mb-3">
                 — Selected Work
               </p>
               <h2 className="font-display text-[clamp(3rem,8vw,7rem)] text-white uppercase leading-none">
                 My{" "}
-                <span className="text-green">Designs</span>
+                <span className="text-red">Designs</span>
               </h2>
             </div>
 
             <div className="flex gap-3 items-center">
               {/* Glassmorphism label */}
               <div className="glass-nano px-4 py-2 hidden md:flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#39ff5a] animate-pulse" />
-                <span className="font-mono-custom text-[9px] tracking-[0.2em] uppercase text-white/40">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#e8281e] animate-pulse" />
+                <span className="font-mono-custom text-[9px] tracking-[0.2em] uppercase text-white/50">
                   Drag to explore
                 </span>
               </div>
@@ -131,9 +131,9 @@ export default function Projects() {
           }}
           onMouseEnter={e => {
             const el = e.currentTarget as HTMLElement;
-            el.style.background = "rgba(57,255,90,0.06)";
-            el.style.borderColor = "rgba(57,255,90,0.25)";
-            el.style.boxShadow = "0 0 40px rgba(57,255,90,0.12)";
+            el.style.background = "rgba(232,40,30,0.08)";
+            el.style.borderColor = "rgba(232,40,30,0.28)";
+            el.style.boxShadow = "0 0 40px rgba(232,40,30,0.14)";
           }}
           onMouseLeave={e => {
             const el = e.currentTarget as HTMLElement;
@@ -152,7 +152,7 @@ export default function Projects() {
             <path d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 27h27.45c0-1.55-.4-3.1-1.2-4.5z" fill="#ffba00"/>
           </svg>
 
-          <span className="font-mono-custom text-[11px] tracking-[0.2em] uppercase text-white/60 group-hover:text-white transition-colors">
+          <span className="font-mono-custom text-[11px] tracking-[0.2em] uppercase text-white/65 group-hover:text-white transition-colors">
             View More Designs
           </span>
 
@@ -160,7 +160,7 @@ export default function Projects() {
           <svg
             width="14" height="14" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-            className="text-[#39ff5a] translate-x-0 group-hover:translate-x-1 transition-transform duration-200"
+            className="text-[#e8281e] translate-x-0 group-hover:translate-x-1 transition-transform duration-200"
           >
             <line x1="5" y1="12" x2="19" y2="12"/>
             <polyline points="12 5 19 12 12 19"/>

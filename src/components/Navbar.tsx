@@ -38,7 +38,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-400 ${
           scrolled
-            ? "bg-black/60 backdrop-blur-2xl border-b border-white/[0.07]"
+            ? "bg-black/70 backdrop-blur-2xl border-b border-white/[0.07]"
             : "bg-transparent"
         }`}
       >
@@ -121,7 +121,7 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleNav(e, link.href)}
-                className="font-mono-custom text-xs tracking-[0.2em] uppercase text-white/60 hover:text-[#39ff5a] transition-colors"
+                className="font-mono-custom text-xs tracking-[0.2em] uppercase text-white/60 hover:text-[#e8281e] transition-colors"
               >
                 {link.label}
               </a>

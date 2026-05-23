@@ -9,8 +9,8 @@ const marqueeItems = [
 ];
 
 const skills = [
-  { name: "Posters Making",       level: 98, color: "#39ff5a" },
-  { name: "PPT Making",           level: 90, color: "#ff2d9b" },
+  { name: "Posters Making",       level: 98, color: "#e8281e" },
+  { name: "PPT Making",           level: 90, color: "#ff6b5b" },
   { name: "Vibe Coding",          level: 92, color: "#ff6a00" },
   { name: "Advertisement Posts",  level: 85, color: "#00e5ff" },
   { name: "Web & Graphic Design", level: 85, color: "#b5f500" },
@@ -19,8 +19,8 @@ const skills = [
 const tools = ["Canva Pro", "Adobe Express", "Google Slides", "Figma (Basics)", "Photoshop (Basics)"];
 
 const cards = [
-  { icon: "🎨", title: "Posters &\nAdvertisements", desc: "Standardized templates, modern readable designs, and attention-commanding layouts.", color: "#39ff5a" },
-  { icon: "📊", title: "PPT Making",                desc: "Professional decks with strict brand consistency and clean data storytelling.", color: "#ff2d9b" },
+  { icon: "🎨", title: "Posters &\nAdvertisements", desc: "Standardized templates, modern readable designs, and attention-commanding layouts.", color: "#e8281e" },
+  { icon: "📊", title: "PPT Making",                desc: "Professional decks with strict brand consistency and clean data storytelling.", color: "#ff6b5b" },
   { icon: "✨", title: "Vibe Coding",               desc: "Trend-aware aesthetic systems and coherent visual themes for modern social media.", color: "#ff6a00" },
 ];
 
@@ -28,10 +28,10 @@ function SkillBar({ name, level, color, index, inView }: { name: string; level: 
   return (
     <div className="mb-7">
       <div className="flex justify-between items-baseline mb-2.5">
-        <span className="font-mono-custom text-[10px] tracking-[0.15em] uppercase text-white/40">{name}</span>
+        <span className="font-mono-custom text-[10px] tracking-[0.15em] uppercase text-white/55">{name}</span>
         <span className="font-display text-xl" style={{ color }}>{level}</span>
       </div>
-      <div className="w-full h-[2px] rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.05)" }}>
+      <div className="w-full h-[2px] rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.07)" }}>
         <motion.div
           className="h-full rounded-full"
           style={{ background: `linear-gradient(90deg, ${color}80, ${color})` }}
@@ -49,19 +49,19 @@ export default function Skills() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="skills" ref={ref} className="relative w-full bg-black overflow-hidden">
+    <section id="skills" ref={ref} className="relative w-full bg-[#080808] overflow-hidden">
       <div className="absolute inset-0 dot-grid pointer-events-none" />
       <div className="absolute top-1/3 left-0 w-[500px] h-[400px] pointer-events-none"
-        style={{ background: "radial-gradient(ellipse at left, rgba(255,106,0,0.04) 0%, transparent 65%)" }} />
+        style={{ background: "radial-gradient(ellipse at left, rgba(232,40,30,0.05) 0%, transparent 65%)" }} />
       <div className="absolute bottom-1/3 right-0 w-[500px] h-[400px] pointer-events-none"
-        style={{ background: "radial-gradient(ellipse at right, rgba(0,229,255,0.04) 0%, transparent 65%)" }} />
+        style={{ background: "radial-gradient(ellipse at right, rgba(255,107,91,0.04) 0%, transparent 65%)" }} />
 
       {/* Marquee */}
       <div className="w-full overflow-hidden border-y border-white/[0.04] py-2.5 relative z-10"
-        style={{ background: "rgba(57,255,90,0.02)" }}>
+        style={{ background: "rgba(232,40,30,0.02)" }}>
         <div className="flex w-max animate-marquee">
           {[...marqueeItems, ...marqueeItems].map((item, i) => (
-            <span key={i} className="font-mono-custom text-[9px] tracking-[0.28em] uppercase text-white/20 mx-5 shrink-0">
+            <span key={i} className="font-mono-custom text-[9px] tracking-[0.28em] uppercase text-white/30 mx-5 shrink-0">
               {item}
             </span>
           ))}
@@ -77,10 +77,10 @@ export default function Skills() {
             transition={{ duration: 0.6 }}
             className="mb-16"
           >
-            <p className="font-mono-custom text-[9px] tracking-[0.32em] uppercase text-white/25 mb-4">— Tools & Skills</p>
+            <p className="font-mono-custom text-[9px] tracking-[0.32em] uppercase text-white/35 mb-4">— Tools & Skills</p>
             <h2 className="font-display text-[clamp(3rem,8vw,7rem)] text-white uppercase leading-none">
               What I Bring<br />
-              <span style={{ color: "rgba(255,255,255,0.15)" }}>To The Table</span>
+              <span style={{ color: "rgba(255,255,255,0.18)" }}>To The Table</span>
             </h2>
           </motion.div>
 
@@ -96,7 +96,7 @@ export default function Skills() {
                   transition={{ duration: 0.6, delay: i * 0.1 }}
                   className="glass p-6 flex gap-5 items-start card-lift"
                   style={{
-                    borderColor: `${card.color}15`,
+                    borderColor: `${card.color}18`,
                     boxShadow: `0 0 40px ${card.color}08, 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05)`,
                   }}
                 >
@@ -104,7 +104,7 @@ export default function Skills() {
                   <div>
                     <h3 className="font-display text-xl uppercase leading-tight mb-2"
                       style={{ color: card.color, whiteSpace: "pre-line" }}>{card.title}</h3>
-                    <p className="font-mono-custom text-[10px] tracking-wide leading-relaxed text-white/35">{card.desc}</p>
+                    <p className="font-mono-custom text-[10px] tracking-wide leading-relaxed text-white/45">{card.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -116,10 +116,10 @@ export default function Skills() {
                 transition={{ duration: 0.6, delay: 0.35 }}
                 className="glass p-5"
               >
-                <p className="font-mono-custom text-[8px] tracking-[0.3em] uppercase text-white/25 mb-3">Tools</p>
+                <p className="font-mono-custom text-[8px] tracking-[0.3em] uppercase text-white/30 mb-3">Tools</p>
                 <div className="flex flex-wrap gap-2">
                   {tools.map((tool, i) => {
-                    const c = ["#39ff5a","#ff2d9b","#ff6a00","#00e5ff","#b5f500"][i % 5];
+                    const c = ["#e8281e","#ff6b5b","#ff6a00","#00e5ff","#b5f500"][i % 5];
                     return (
                       <span key={tool} className="font-mono-custom text-[8px] tracking-[0.1em] uppercase px-3 py-1.5 rounded-full border"
                         style={{ borderColor: `${c}30`, color: c, background: `${c}0a` }}>{tool}</span>
@@ -136,7 +136,7 @@ export default function Skills() {
               transition={{ duration: 0.6, delay: 0.15 }}
               className="glass p-8"
             >
-              <p className="font-mono-custom text-[8px] tracking-[0.3em] uppercase text-white/25 mb-8">Proficiency</p>
+              <p className="font-mono-custom text-[8px] tracking-[0.3em] uppercase text-white/30 mb-8">Proficiency</p>
               {skills.map((s, i) => (
                 <SkillBar key={s.name} {...s} index={i} inView={inView} />
               ))}

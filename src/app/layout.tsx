@@ -17,6 +17,9 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   title: "Manish — Graphic Designer",
   description: "Passionate Visual Designer specializing in Canva. I transform concepts into eye-catching social media assets, marketing materials, and ad creatives.",
+  icons: {
+    icon: "/msk-logo.png",
+  },
 };
 
 export default function RootLayout({

@@ -25,10 +25,11 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" ref={ref} className="relative w-full bg-black overflow-hidden">
+    <section id="contact" ref={ref} className="relative w-full bg-[#080808] overflow-hidden">
       <div className="absolute inset-0 dot-grid pointer-events-none" />
+      {/* Ambient red glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] pointer-events-none"
-        style={{ background: "radial-gradient(ellipse, rgba(57,255,90,0.04) 0%, transparent 65%)" }} />
+        style={{ background: "radial-gradient(ellipse, rgba(232,40,30,0.06) 0%, transparent 65%)" }} />
       <div className="absolute bottom-0 left-0 w-[500px] h-[400px] pointer-events-none"
         style={{ background: "radial-gradient(ellipse at bottom left, rgba(255,45,155,0.04) 0%, transparent 65%)" }} />
 
@@ -41,10 +42,10 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="mb-16"
           >
-            <p className="font-mono-custom text-[9px] tracking-[0.32em] uppercase text-white/25 mb-4">— Let's Create Together</p>
+            <p className="font-mono-custom text-[9px] tracking-[0.32em] uppercase text-white/35 mb-4">— Let's Create Together</p>
             <h2 className="font-display text-[clamp(3rem,9vw,8rem)] text-white uppercase leading-none">
               Got A<br />Project<br />
-              <span className="text-green">In Mind?</span>
+              <span className="text-red">In Mind?</span>
             </h2>
           </motion.div>
 
@@ -56,28 +57,28 @@ export default function Contact() {
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <p className="text-white/35 text-[16px] leading-relaxed mb-10 max-w-md">
+              <p className="text-white/45 text-[16px] leading-relaxed mb-10 max-w-md">
                 Whether it's a poster, album cover, brand identity or a last-minute creative brief — I'm always up for interesting work. Let's build something worth looking at.
               </p>
 
               <div className="flex flex-col gap-3 mb-10">
                 {[
-                  { icon: "✉", label: "Email", val: "manishshivakumar178@gmail.com", href: "mailto:manishshivakumar178@gmail.com", color: "#39ff5a" },
-                  { icon: "✆", label: "Phone / WhatsApp", val: "+91 90353 61901", href: "tel:+919035361901", color: "#ff2d9b" },
+                  { icon: "✉", label: "Email", val: "manishshivakumar178@gmail.com", href: "mailto:manishshivakumar178@gmail.com", color: "#e8281e" },
+                  { icon: "✆", label: "Phone / WhatsApp", val: "+91 90353 61901", href: "tel:+919035361901", color: "#ff6b5b" },
                 ].map((c) => (
                   <a key={c.label} href={c.href}
                     className="glass p-5 flex items-center gap-4 group card-lift"
-                    style={{ borderColor: `${c.color}10` }}
+                    style={{ borderColor: `${c.color}12` }}
                   >
                     <div className="w-9 h-9 rounded-xl flex items-center justify-center text-sm font-bold border transition-all duration-200"
-                      style={{ borderColor: `${c.color}20`, color: c.color, background: `${c.color}08` }}
-                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = `0 0 16px ${c.color}30`; }}
+                      style={{ borderColor: `${c.color}22`, color: c.color, background: `${c.color}08` }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = `0 0 16px ${c.color}35`; }}
                       onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}>
                       {c.icon}
                     </div>
                     <div>
-                      <p className="font-mono-custom text-[8px] tracking-[0.25em] uppercase text-white/20 mb-0.5">{c.label}</p>
-                      <p className="text-white/60 group-hover:text-white text-sm transition-colors font-medium">{c.val}</p>
+                      <p className="font-mono-custom text-[8px] tracking-[0.25em] uppercase text-white/25 mb-0.5">{c.label}</p>
+                      <p className="text-white/70 group-hover:text-white text-sm transition-colors font-medium">{c.val}</p>
                     </div>
                   </a>
                 ))}
@@ -110,45 +111,53 @@ export default function Contact() {
                     { name: "email", type: "email", placeholder: "your@email.com", label: "Email" },
                   ].map((f) => (
                     <div key={f.name} className="flex flex-col gap-1.5">
-                      <label className="font-mono-custom text-[8px] tracking-[0.3em] uppercase text-white/25">
-                        {f.label} <span className="text-[#39ff5a]">*</span>
+                      <label className="font-mono-custom text-[8px] tracking-[0.3em] uppercase text-white/30">
+                        {f.label} <span style={{ color: "#e8281e" }}>*</span>
                       </label>
                       <input type={f.type} required placeholder={f.placeholder}
-                        className="bg-white/[0.03] border border-white/[0.06] rounded-xl px-4 py-3 text-white text-sm outline-none font-mono-custom transition-all duration-200 placeholder-white/15 focus:border-[#39ff5a]/40 focus:bg-white/[0.05]" />
+                        className="bg-white/[0.03] border border-white/[0.08] rounded-xl px-4 py-3 text-white text-sm outline-none font-mono-custom transition-all duration-200 placeholder-white/20 focus:border-[#e8281e]/40 focus:bg-white/[0.05]" />
                     </div>
                   ))}
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label className="font-mono-custom text-[8px] tracking-[0.3em] uppercase text-white/25">
-                    Subject <span className="text-[#39ff5a]">*</span>
+                  <label className="font-mono-custom text-[8px] tracking-[0.3em] uppercase text-white/30">
+                    Subject <span style={{ color: "#e8281e" }}>*</span>
                   </label>
                   <input type="text" required placeholder="What's this about?"
-                    className="bg-white/[0.03] border border-white/[0.06] rounded-xl px-4 py-3 text-white text-sm outline-none font-mono-custom transition-all duration-200 placeholder-white/15 focus:border-[#39ff5a]/40 focus:bg-white/[0.05]" />
+                    className="bg-white/[0.03] border border-white/[0.08] rounded-xl px-4 py-3 text-white text-sm outline-none font-mono-custom transition-all duration-200 placeholder-white/20 focus:border-[#e8281e]/40 focus:bg-white/[0.05]" />
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label className="font-mono-custom text-[8px] tracking-[0.3em] uppercase text-white/25">
-                    Message <span className="text-[#39ff5a]">*</span>
+                  <label className="font-mono-custom text-[8px] tracking-[0.3em] uppercase text-white/30">
+                    Message <span style={{ color: "#e8281e" }}>*</span>
                   </label>
                   <textarea required rows={5} placeholder="Tell me about your project..."
-                    className="bg-white/[0.03] border border-white/[0.06] rounded-xl px-4 py-3 text-white text-sm outline-none font-mono-custom transition-all duration-200 resize-none placeholder-white/15 focus:border-[#39ff5a]/40 focus:bg-white/[0.05]" />
+                    className="bg-white/[0.03] border border-white/[0.08] rounded-xl px-4 py-3 text-white text-sm outline-none font-mono-custom transition-all duration-200 resize-none placeholder-white/20 focus:border-[#e8281e]/40 focus:bg-white/[0.05]" />
                 </div>
 
                 <button type="submit" disabled={status === "sending" || status === "sent"}
                   className={`w-full py-4 rounded-xl font-mono-custom text-[10px] tracking-[0.22em] uppercase font-bold transition-all duration-200 disabled:opacity-60 ${
                     status === "sent"
                       ? "bg-emerald-500 text-white border border-emerald-500"
-                      : "bg-[#39ff5a] text-black border border-[#39ff5a] hover:shadow-[0_0_28px_rgba(57,255,90,0.5)]"
-                  }`}>
+                      : "text-white border"
+                  }`}
+                  style={status !== "sent" ? {
+                    background: "#e8281e",
+                    borderColor: "#ff3b30",
+                    boxShadow: status === "idle" ? undefined : undefined,
+                  } : undefined}
+                  onMouseEnter={e => { if (status === "idle") (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 0 32px rgba(232,40,30,0.5)"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.boxShadow = "none"; }}
+                >
                   {status === "idle"    && "Send Message →"}
-                  {status === "sending" && <span className="flex items-center justify-center gap-2"><span className="w-3 h-3 border-2 border-black/30 border-t-black rounded-full animate-spin"/>Sending...</span>}
+                  {status === "sending" && <span className="flex items-center justify-center gap-2"><span className="w-3 h-3 border-2 border-white/30 border-t-white rounded-full animate-spin"/>Sending...</span>}
                   {status === "sent"    && "✓ Message Sent!"}
                   {status === "error"   && "Error — Try Again"}
                 </button>
 
-                <p className="font-mono-custom text-[8px] tracking-[0.2em] uppercase text-white/15 text-center">
-                  Fields marked with <span className="text-[#39ff5a]">*</span> are required
+                <p className="font-mono-custom text-[8px] tracking-[0.2em] uppercase text-white/20 text-center">
+                  Fields marked with <span style={{ color: "#e8281e" }}>*</span> are required
                 </p>
               </form>
             </motion.div>
